@@ -25,8 +25,8 @@ function countdown() {
     secsLeft = timeLeft - 60 * minsLeft;
     var minsString = addLeadingZero(minsLeft);
     var secsString = addLeadingZero(secsLeft);
-    document.getElementById("seconds").textContent = secsLeft;
-    document.getElementById("minutes").textContent = minsLeft
+    document.getElementById("seconds").textContent = secsString;
+    document.getElementById("minutes").textContent = minsString;
     checkTimer();
     timeLeft--;
 }
