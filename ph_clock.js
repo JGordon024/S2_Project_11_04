@@ -1,4 +1,4 @@
-"strict usage";
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -11,14 +11,14 @@
    Filename:   ph_clock.js     
 
 */
-
-var minsLeft = 0;
-var secsLeft = 15;
+// Creates 4 variables, the first 2 are defining the amount of time that the minutes and seconds will have. The timeleft give the formula for how long to count down. Finally, the clockID is to be used to make the function work every second
+var minsLeft = 30;
+var secsLeft = 0;
 var timeLeft = minsLeft * 60 + secsLeft;
 var clockID = setInterval("countdown()", 1000);
 
 
-
+// Creates the countdown function. It calls in another function for the minute and second strings.The minutes and seconds ID's in HTML are replaced with the 2 strings. 
 
 function countdown() {
     minsLeft = Math.floor(timeLeft / 60);
@@ -30,10 +30,9 @@ function countdown() {
     checkTimer();
     timeLeft--;
 }
-
+// Creates a function for the clock to stop the count down, once it ends text appears stating that the order has expired 
 function stopClock() {
-    document.getElementById("TimeHead").insertAdjacentHTML('beforeend',
-        " <br />(Order Expired)");
+    document.getElementById("TimeHead").insertAdjacentHTML('beforeend', " <br />(Order Expired)");
     clearInterval(clockID);
 }
 
